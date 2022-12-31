@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donation Form Assignment</title>
+ 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+   
+    <style>
+        .form-group{
+            margin: 2vh auto;
+            padding:1vh ;
+        }
+        #form-field{
+            border: 1px solid black;
+            background: linear-gradient(95deg, #c7e3e6, rgb(119,195,199));
+        }
+       
+       
+    </style>
+ 
+
+</head>
+ 
+<body>
+    <div class="container" id="form-field">
+        <h1  class="mx-5 mt-5">User Record List </h1>
+       
+       <form action="" class=" m-2 p-4" onsubmit="return  validation()">
+ 
+        <div class="form-group">
+            <label for="">Username:-</label>
+            <input type="text" id="username" class="form-control" >
+            <div id="userError" class="text-danger"></div>
+         </div>
+ 
+         <div class="form-group">
+          <label for=""> Email Address:-</label>
+            <input type="email" id="email" class="form-control" >
+            <div id="emailError" class="text-danger"></div>
+         </div>
+ 
+         <div class="form-group">
+          <label for="">Select your blood group:-</label>
+          <input type="text" id="blood_grp" class="form-control" >
+          <div id="bloodError" class="text-danger" ></div>
+         </div>
+ 
+         <div class="form-group">
+          <label for="">Enter your address:-</label>
+            <textarea type="text" id="address"class="form-control" rows="3" ></textarea>
+            <div id="addressError" class="text-danger"></div>
+         </div>
+ 
+         <div class="form-group">
+          <label for="">Enter your phone number:-</label>
+            <input type="text" id="phone_num" class="form-control" >
+            <div id="phoneError" class="text-danger"></div>
+         </div>
+         
+         <div class="form-group">
+          <label for="">Any other detail regading your medical health:- </label>
+            <textarea type="text" id="other" class="form-control" rows="3" required></textarea>
+          </div>
+     
+         <div class="from-group">
+            <input type="submit" value="Submit" class="btn bg-dark text-light">
+         </div>
+ 
+       </form>
+ 
+
+    </div>
+
+
+    <script>
+ 
+     function validation(){
+        let username = document.getElementById("username").value;
+        let email = document.getElementById("email").value
+        let address = document.getElementById("address").value
+        let blood_grp = document.getElementById("blood_grp").value
+        let phone_num = document.getElementById("phone_num").value
+        let other = document.getElementById("other").value
+       
+ 
+        let userCheck = /^[A-Za-z_][A-Za-z0-9 \._-]{3,30}$/g
+        let emailCheck = /^[A-Za-z0-9-_]{1,30}\@[a-z]{2,8}\.[a-z]{3}$/g
+        let addressCheck = /^(?:.*[A-Za-z])[A-Za-z0-9 -_@#$%(). \r\n]{1,100}$/g;
+        let numberCheck =  /^[0-9]{10}$/g;
+        let blood_grpCheck = /^(?:.*[A|B|AB|O])[+-]$/g
+     
+ 
+        // for user name validation
+       
+        if(userCheck.test(username)){
+          document.getElementById("userError").innerHTML = "";
+        }else{
+          document.getElementById("userError").innerHTML = "invalid user name "
+          return false ;
+        }
+ 
+         // for user email validation
+        if(emailCheck.test(email)){
+          document.getElementById("emailError").innerHTML = "";
+        }else{
+          document.getElementById("emailError").innerHTML = "invalid user email "
+          return false ;
+        }
+ 
+        // for user blood group validation
+        if(blood_grpCheck.test(blood_grp)){
+          document.getElementById("bloodError").innerHTML = "";
+        }else{
+          document.getElementById("bloodError").innerHTML = "please enter valid blood group"
+          return false ;
+        }
+ 
+
+        // for user address validation
+        if(addressCheck.test(address)){
+          document.getElementById("addressError").innerHTML = "";
+        } else{
+          document.getElementById("addressError").innerHTML = "Invalid address"
+          return false ;
+        }
+ 
+        // for user phone number validation
+        if(numberCheck.test(phone_num)){
+          document.getElementById("phoneError").innerHTML = "";
+         
+        }else{
+          document.getElementById("phoneError").innerHTML = "invalid phone number"
+          return false ;
+        }
+   
+ 
+
+   
+     }
+
+
+    </script>
+
+
+
+
+
+
+</body>
+ 
+</html><!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donation Form Assignment</title>
+ 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+   
+    <style>
+        .form-group{
+            margin: 2vh auto;
+            padding:1vh ;
+        }
+        #form-field{
+            border: 1px solid black;
+            background: linear-gradient(95deg, #c7e3e6, rgb(119,195,199));
+        }
+       
+       
+    </style>
+ 
+
+</head>
+ 
+<body>
+    <div class="container" id="form-field">
+        <h1  class="mx-5 mt-5">User Record List </h1>
+       
+       <form action="" class=" m-2 p-4" onsubmit="return  validation()">
+ 
+        <div class="form-group">
+            <label for="">Username:-</label>
+            <input type="text" id="username" class="form-control" >
+            <div id="userError" class="text-danger"></div>
+         </div>
+ 
+         <div class="form-group">
+          <label for=""> Email Address:-</label>
+            <input type="email" id="email" class="form-control" >
+            <div id="emailError" class="text-danger"></div>
+         </div>
+ 
+         <div class="form-group">
+          <label for="">Select your blood group:-</label>
+          <input type="text" id="blood_grp" class="form-control" >
+          <div id="bloodError" class="text-danger" ></div>
+         </div>
+ 
+         <div class="form-group">
+          <label for="">Enter your address:-</label>
+            <textarea type="text" id="address"class="form-control" rows="3" ></textarea>
+            <div id="addressError" class="text-danger"></div>
+         </div>
+ 
+         <div class="form-group">
+          <label for="">Enter your phone number:-</label>
+            <input type="text" id="phone_num" class="form-control" >
+            <div id="phoneError" class="text-danger"></div>
+         </div>
+         
+         <div class="form-group">
+          <label for="">Any other detail regading your medical health:- </label>
+            <textarea type="text" id="other" class="form-control" rows="3" required></textarea>
+          </div>
+     
+         <div class="from-group">
+            <input type="submit" value="Submit" class="btn bg-dark text-light">
+         </div>
+ 
+       </form>
+ 
+
+    </div>
+
+
+    <script>
+ 
+     function validation(){
+        let username = document.getElementById("username").value;
+        let email = document.getElementById("email").value
+        let address = document.getElementById("address").value
+        let blood_grp = document.getElementById("blood_grp").value
+        let phone_num = document.getElementById("phone_num").value
+        let other = document.getElementById("other").value
+       
+ 
+        let userCheck = /^[A-Za-z_][A-Za-z0-9 \._-]{3,30}$/g
+        let emailCheck = /^[A-Za-z0-9-_]{1,30}\@[a-z]{2,8}\.[a-z]{3}$/g
+        let addressCheck = /^(?:.*[A-Za-z])[A-Za-z0-9 -_@#$%(). \r\n]{1,100}$/g;
+        let numberCheck =  /^[0-9]{10}$/g;
+        let blood_grpCheck = /^(?:.*[A|B|AB|O])[+-]$/g
+     
+ 
+        // for user name validation
+       
+        if(userCheck.test(username)){
+          document.getElementById("userError").innerHTML = "";
+        }else{
+          document.getElementById("userError").innerHTML = "invalid user name "
+          return false ;
+        }
+ 
+         // for user email validation
+        if(emailCheck.test(email)){
+          document.getElementById("emailError").innerHTML = "";
+        }else{
+          document.getElementById("emailError").innerHTML = "invalid user email "
+          return false ;
+        }
+ 
+        // for user blood group validation
+        if(blood_grpCheck.test(blood_grp)){
+          document.getElementById("bloodError").innerHTML = "";
+        }else{
+          document.getElementById("bloodError").innerHTML = "please enter valid blood group"
+          return false ;
+        }
+ 
+
+        // for user address validation
+        if(addressCheck.test(address)){
+          document.getElementById("addressError").innerHTML = "";
+        } else{
+          document.getElementById("addressError").innerHTML = "Invalid address"
+          return false ;
+        }
+ 
+        // for user phone number validation
+        if(numberCheck.test(phone_num)){
+          document.getElementById("phoneError").innerHTML = "";
+         
+        }else{
+          document.getElementById("phoneError").innerHTML = "invalid phone number"
+          return false ;
+        }
+   
+ 
+
+   
+     }
+
+
+    </script>
+
+
+
+
+
+
+</body>
+ 
+</html><!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donation Form Assignment</title>
+ 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+   
+    <style>
+        .form-group{
+            margin: 2vh auto;
+            padding:1vh ;
+        }
+        #form-field{
+            border: 1px solid black;
+            background: linear-gradient(95deg, #c7e3e6, rgb(119,195,199));
+        }
+       
+       
+    </style>
+ 
+
+</head>
+ 
+<body>
+    <div class="container" id="form-field">
+        <h1  class="mx-5 mt-5">User Record List </h1>
+       
+       <form action="" class=" m-2 p-4" onsubmit="return  validation()">
+ 
+        <div class="form-group">
+            <label for="">Username:-</label>
+            <input type="text" id="username" class="form-control" >
+            <div id="userError" class="text-danger"></div>
+         </div>
+ 
+         <div class="form-group">
+          <label for=""> Email Address:-</label>
+            <input type="email" id="email" class="form-control" >
+            <div id="emailError" class="text-danger"></div>
+         </div>
+ 
+         <div class="form-group">
+          <label for="">Select your blood group:-</label>
+          <input type="text" id="blood_grp" class="form-control" >
+          <div id="bloodError" class="text-danger" ></div>
+         </div>
+ 
+         <div class="form-group">
+          <label for="">Enter your address:-</label>
+            <textarea type="text" id="address"class="form-control" rows="3" ></textarea>
+            <div id="addressError" class="text-danger"></div>
+         </div>
+ 
+         <div class="form-group">
+          <label for="">Enter your phone number:-</label>
+            <input type="text" id="phone_num" class="form-control" >
+            <div id="phoneError" class="text-danger"></div>
+         </div>
+         
+         <div class="form-group">
+          <label for="">Any other detail regading your medical health:- </label>
+            <textarea type="text" id="other" class="form-control" rows="3" required></textarea>
+          </div>
+     
+         <div class="from-group">
+            <input type="submit" value="Submit" class="btn bg-dark text-light">
+         </div>
+ 
+       </form>
+ 
+
+    </div>
+
+
+    <script>
+ 
+     function validation(){
+        let username = document.getElementById("username").value;
+        let email = document.getElementById("email").value
+        let address = document.getElementById("address").value
+        let blood_grp = document.getElementById("blood_grp").value
+        let phone_num = document.getElementById("phone_num").value
+        let other = document.getElementById("other").value
+       
+ 
+        let userCheck = /^[A-Za-z_][A-Za-z0-9 \._-]{3,30}$/g
+        let emailCheck = /^[A-Za-z0-9-_]{1,30}\@[a-z]{2,8}\.[a-z]{3}$/g
+        let addressCheck = /^(?:.*[A-Za-z])[A-Za-z0-9 -_@#$%(). \r\n]{1,100}$/g;
+        let numberCheck =  /^[0-9]{10}$/g;
+        let blood_grpCheck = /^(?:.*[A|B|AB|O])[+-]$/g
+     
+ 
+        // for user name validation
+       
+        if(userCheck.test(username)){
+          document.getElementById("userError").innerHTML = "";
+        }else{
+          document.getElementById("userError").innerHTML = "invalid user name "
+          return false ;
+        }
+ 
+         // for user email validation
+        if(emailCheck.test(email)){
+          document.getElementById("emailError").innerHTML = "";
+        }else{
+          document.getElementById("emailError").innerHTML = "invalid user email "
+          return false ;
+        }
+ 
+        // for user blood group validation
+        if(blood_grpCheck.test(blood_grp)){
+          document.getElementById("bloodError").innerHTML = "";
+        }else{
+          document.getElementById("bloodError").innerHTML = "please enter valid blood group"
+          return false ;
+        }
+ 
+
+        // for user address validation
+        if(addressCheck.test(address)){
+          document.getElementById("addressError").innerHTML = "";
+        } else{
+          document.getElementById("addressError").innerHTML = "Invalid address"
+          return false ;
+        }
+ 
+        // for user phone number validation
+        if(numberCheck.test(phone_num)){
+          document.getElementById("phoneError").innerHTML = "";
+         
+        }else{
+          document.getElementById("phoneError").innerHTML = "invalid phone number"
+          return false ;
+        }
+   
+ 
+
+   
+     }
+
+
+    </script>
+
+
+
+
+
+
+</body>
+ 
+</html>
